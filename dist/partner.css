@@ -1,0 +1,9 @@
+.ultrasim-banner{display:block;margin-top:38px;border:1px solid #554061;border-radius:5px;overflow:hidden;background:#1b1424}
+.ultrasim-banner>img{display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:contain}
+.ultrasim-banner>span{display:grid;grid-template-columns:1fr auto;gap:6px 25px;padding:23px 27px;border-top:1px solid #59406d}
+.ultrasim-banner strong{font:30px/1.2 Georgia,serif;letter-spacing:-.6px;color:#edddfc}
+.ultrasim-banner>span>span{font-size:13px;color:#bca7ce}
+.ultrasim-banner b{grid-column:2;grid-row:1/3;align-self:center;font-size:28px;font-weight:400;color:#c5a0ea}
+.ultrasim-banner:hover{border-color:#c5a0ea}
+.ultrasim-banner:hover b{color:#f1ddff}
+@media(max-width:760px){.ultrasim-banner{margin-top:29px}.ultrasim-banner>span{padding:18px 20px}.ultrasim-banner strong{font-size:26px}.ultrasim-banner>span>span{font-size:12px}}

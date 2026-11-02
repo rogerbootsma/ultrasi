@@ -1,0 +1,116 @@
+/* The Ultrasi star bar: moving light, a drawn bolt, and a pearl control dial. */
+.tiny-symbol {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  color: #bba0e4;
+}
+.tiny-symbol svg {
+  width: 27px;
+  height: 31px;
+  fill: #be9ae51a;
+  stroke: currentColor;
+  stroke-width: 1.55;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 9px #af7fec2a);
+}
+.reset-study {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+}
+.reset-study svg {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.star {
+  animation: stellar-drift var(--drift-duration, 11s) linear infinite,
+    stellar-twinkle var(--twinkle-duration, 3.6s) ease-in-out infinite alternate;
+  animation-delay: var(--star-delay, 0s), var(--star-delay, 0s);
+}
+.star.cross {
+  font-size: 13px;
+  filter: drop-shadow(0 0 4px #efceff99);
+}
+.travelling-star {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  animation: cosmic-crossing 7.5s linear infinite;
+  pointer-events: none;
+}
+.travelling-star svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: #fff3ff;
+  filter: drop-shadow(0 0 5px #ffe3ff) drop-shadow(0 0 12px #ead3ff99);
+  animation: star-turn 7.5s linear infinite;
+}
+.travelling-star::before {
+  content: '';
+  position: absolute;
+  top: calc(50% - .5px);
+  right: 50%;
+  width: 85px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #e4c4ff40 55%, #fff1ffb3);
+}
+#ultra-range::-webkit-slider-thumb {
+  background: #faf7ff url('brand/slider-orb.svg') center / 100% 100% no-repeat;
+  border: 0;
+  box-shadow: 0 2px 6px #21123055, 0 0 0 3px #d9beff18, 0 0 25px #d5aeff40;
+  transition: box-shadow .2s ease;
+}
+#ultra-range::-moz-range-thumb {
+  background: #faf7ff url('brand/slider-orb.svg') center / 100% 100% no-repeat;
+  border: 0;
+  box-shadow: 0 2px 6px #21123055, 0 0 0 3px #d9beff18, 0 0 25px #d5aeff40;
+  transition: box-shadow .2s ease;
+}
+#ultra-range:hover::-webkit-slider-thumb,
+#ultra-range:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 2px 6px #21123055, 0 0 0 3px #e0c7ff55, 0 0 34px #d5aeff66;
+}
+#ultra-range:hover::-moz-range-thumb,
+#ultra-range:focus-visible::-moz-range-thumb {
+  box-shadow: 0 2px 6px #21123055, 0 0 0 3px #e0c7ff55, 0 0 34px #d5aeff66;
+}
+@keyframes stellar-drift {
+  from { translate: -22px 4px; }
+  to { translate: 38px -6px; }
+}
+@keyframes stellar-twinkle {
+  from { opacity: .25; scale: .7; }
+  to { opacity: 1; scale: 1.15; }
+}
+@keyframes cosmic-crossing {
+  0% { left: -2%; top: 55%; opacity: 0; scale: .7; }
+  8% { opacity: 1; }
+  40% { top: 33%; scale: 1; }
+  75% { top: 63%; }
+  93% { opacity: 1; }
+  100% { left: 98%; top: 50%; opacity: 0; scale: .7; }
+}
+@keyframes star-turn {
+  to { rotate: 180deg; }
+}
+@media (max-width: 760px) {
+  .tiny-symbol svg { width: 24px; height: 28px; }
+  .travelling-star { width: 15px; height: 15px; }
+  .travelling-star::before { width: 45px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .travelling-star { left: 58%; opacity: .8; }
+}

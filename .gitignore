@@ -1,0 +1,7 @@
+.openai/
+artwork/
+social/
+qa/
+node_modules/
+*.zip
+*.log
