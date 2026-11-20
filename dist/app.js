@@ -52,10 +52,10 @@ if (enquiryForm) {
     }
     const subject = `Ultrasi enquiry: ${interest}`;
     const body = `Hello Metaversal Arts,\n\n${message}\n\nArea of interest: ${interest}\n\nFrom: ${name}\nEmail: ${email}`;
-    const text = `To: contact@metaversalarts.io\nSubject: ${subject}\n\n${body}`;
+    const text = `To: rogerbootsma@gmail.com\nSubject: ${subject}\n\n${body}`;
     draftText.value = text;
-    gmail.href = 'https://mail.google.com/mail/?' + new URLSearchParams({view: 'cm', fs: '1', to: 'contact@metaversalarts.io', su: subject, body});
-    app.href = 'mailto:contact@metaversalarts.io?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    gmail.href = 'https://mail.google.com/mail/?' + new URLSearchParams({view: 'cm', fs: '1', to: 'rogerbootsma@gmail.com', su: subject, body});
+    app.href = 'mailto:rogerbootsma@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
     draft.hidden = false;
     status.textContent = '';
     return text;
@@ -86,7 +86,7 @@ if (enquiryForm) {
     draft.hidden = true;
     draftText.value = '';
     gmail.href = 'https://mail.google.com/mail/';
-    app.href = 'mailto:contact@metaversalarts.io';
+    app.href = 'mailto:rogerbootsma@gmail.com';
     status.textContent = 'Your details changed. Prepare the email again to update your draft.';
   });
   enquiryForm.hidden = false;
